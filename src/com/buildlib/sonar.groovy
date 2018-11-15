@@ -8,6 +8,11 @@ import static groovyx.net.http.ContentType.TEXT
 *
 **/
 
+def hasService(String name) {
+    /// TODO: implement URL check
+    return true
+}
+
 class SonarQube implements Serializable {
     def script
     def steps
@@ -15,5 +20,7 @@ class SonarQube implements Serializable {
     String taskURL = "http://<SONAR_URL>/api/ce/task?id=TASK_ID"
     String projectStatusURL = "http://<SONAR_URL>/api/qualitygates/project_status?analysisId="
     SonarQube(steps) {this.steps = steps}
-    /* -Dsonar.login= -Dsonar.projectKey=myproject -Dsonar.projectName= */
+
+
+    /* -Dsonar.login= -Dsonar.projectKey=myproject -Dsonar.projectName= -Dsonar.host.url=http://localhost:9000*/
 }
